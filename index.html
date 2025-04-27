@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IESconnect - Forum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/IESconnect-2.png" alt="IESconnect Logo" class="logo">
+            <span class="header-title">IESconnect</span>
+        </div>
+        <nav>
+            <form action="search.html" method="GET" class="search-form">
+                <input type="search" name="query" placeholder="Search IESconnect" class="search-bar" required>
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </form>
+        </nav>
+        <div class="user-profile" id="user-profile-toggle">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i> 
+            </div>
+            <span class="username">FlyingSquirrelMan</span>
+            <i class="fas fa-caret-down dropdown-arrow"></i>
+            <div class="dropdown-menu" id="user-dropdown">
+                <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+                <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#saved"><i class="fas fa-bookmark"></i> Saved Posts</a>
+                <hr>
+                <a href="#logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar left-sidebar">
+            <h2>Topics</h2>
+            <ul>
+                <li><a href="#all" class="topic-link active-topic" data-topic="all"><i class="fas fa-list"></i> All Topics</a></li>
+                <li><a href="#housing" class="topic-link" data-topic="housing"><i class="fas fa-home"></i> Housing</a></li>
+                <li><a href="#classes" class="topic-link" data-topic="classes"><i class="fas fa-book-open"></i> Classes</a></li>
+                <li><a href="#food-drink" class="topic-link" data-topic="food-drink"><i class="fas fa-utensils"></i> Food & Drink</a></li>
+                <li><a href="#trips" class="topic-link" data-topic="trips"><i class="fas fa-plane-departure"></i> Trips</a></li>
+                <li><a href="#places-to-see" class="topic-link" data-topic="places-to-see"><i class="fas fa-map-marked-alt"></i> Places to See</a></li>
+                <li><a href="#hidden-gems" class="topic-link" data-topic="hidden-gems"><i class="fas fa-search-location"></i> Hidden Gems</a></li>
+                <li><a href="#nightlife" class="topic-link" data-topic="nightlife"><i class="fas fa-moon"></i> Nightlife</a></li>
+                <li><a href="#language-exchange" class="topic-link" data-topic="language-exchange"><i class="fas fa-comments"></i> Language Exchange</a></li>
+                <li><a href="#internships" class="topic-link" data-topic="internships"><i class="fas fa-briefcase"></i> Internships</a></li>
+                <li><a href="#campus-life" class="topic-link" data-topic="campus-life"><i class="fas fa-university"></i> Campus Life</a></li>
+                <li><a href="#transportation" class="topic-link" data-topic="transportation"><i class="fas fa-subway"></i> Transportation</a></li>
+            </ul>
+            <button class="btn btn-create-post" id="create-post-btn-sidebar">Create Post</button>
+        </aside>
+
+        <section class="main-feed">
+            <button class="btn btn-create-post-mobile" id="create-post-btn-mobile">Create Post <i class="fas fa-plus"></i></button>
+            <article class="post" data-topic="housing" data-post-id="post-1">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">125</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Neighborhoods" class="subforum-link">IES/Neighborhoods</a> by
+                        <span class="user" data-username="GelatoGuardian">
+                            GelatoGuardian <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">3 hours ago</span>
+                        <span class="post-flair">Question</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-1">Best housing option close to the IES center?</a></h3>
+                    <p class="post-body">Hey everyone! Just arrived in Milan and trying to figure out housing. What are the best neighborhoods or specific residences that are close to the IES center for classes and reasonably affordable? Any tips appreciated!</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (15)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="classes" data-post-id="post-2">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">88</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Course%20Reviews" class="subforum-link">IES/Course Reviews</a> by
+                        <span class="user" data-username="EspressoExplorer">
+                            EspressoExplorer <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">1 day ago</span>
+                        <span class="post-flair">Question</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-2">Thoughts on "Cracking the Code: Leonardo da Vinci"?</a></h3>
+                    <p class="post-body">Has anyone taken the "Cracking the Code: Leonardo da Vinci" class? Thinking about signing up and wondering about the workload and grading difficulty. How was your experience?</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (8)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="food-drink" data-post-id="post-3">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">210</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Aperitivo" class="subforum-link">IES/Aperitivo</a> by
+                        <span class="user" data-username="PastaPilot">
+                            PastaPilot <span class="badge alumni">Alumni</span>
+                        </span>
+                        <span class="timestamp">5 hours ago</span>
+                        <span class="post-flair">Recommendation</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-3">Hidden gem aperitivo spot near Navigli!</a></h3>
+                    <p class="post-body">Found this amazing little bar last night, incredible drinks and huge buffet for cheap. You HAVE to try the Negroni! Highly recommend for a real Milanese experience. [Maybe add a fake map link here if needed]</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (25)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn saved"><i class="fas fa-bookmark"></i> Saved</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="trips" data-post-id="post-4">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">55</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Weekend%20Getaways" class="subforum-link">IES/Weekend Getaways</a> by
+                        <span class="user" data-username="GondolaGuru">
+                            GondolaGuru <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">8 hours ago</span>
+                        <span class="post-flair">Suggestion</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-4">Weekend Trip Idea: Verona & Lake Garda?</a></h3>
+                    <p class="post-body">Thinking about doing a weekend trip soon. Has anyone combined Verona and Lake Garda? Wondering if it's feasible and if you have tips on trains/accommodation. Seems like a cool mix of city and nature!</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (12)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="places-to-see" data-post-id="post-5">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">17</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Historical%20Sites" class="subforum-link">IES/Historical Sites</a> by
+                        <span class="user" data-username="DuomoDiver">
+                            DuomoDiver <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">2 days ago</span>
+                        <span class="post-flair">Question</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-5">Best Day Trip from Milan for History Buffs?</a></h3>
+                    <p class="post-body">Looking for a recommendation for a day trip from Milan, accessible by train. I'm really interested in history (Roman, Renaissance, anything!). Besides the obvious big cities nearby, any hidden gems I should consider? Thanks!</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (5)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="nightlife" data-post-id="post-6">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">42</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Bars" class="subforum-link">IES/Bars</a> by
+                        <span class="user" data-username="AperolSpritzAce">
+                            AperolSpritzAce <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">18 hours ago</span>
+                        <span class="post-flair">Discussion</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-6">Quiet bars for conversation?</a></h3>
+                    <p class="post-body">Most places seem super loud for Aperitivo. Anyone know good spots, maybe near Brera or Isola, where you can actually talk without shouting?</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (9)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="transportation" data-post-id="post-7">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote active"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">7</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Metro%2FTram%2FBus" class="subforum-link">IES/Metro/Tram/Bus</a> by
+                        <span class="user" data-username="TramTracker">
+                            TramTracker <span class="badge alumni">Alumni</span>
+                        </span>
+                        <span class="timestamp">3 days ago</span>
+                        <span class="post-flair">Tip</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-7">PSA: Validate your ATM metro tickets!</a></h3>
+                    <p class="post-body">Just a reminder for newcomers, especially if you buy single tickets - make sure you validate them in the little yellow machines *before* going down to the platform. Saw someone get a hefty fine yesterday.</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (3)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="language-exchange" data-post-id="post-8">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">29</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Find%20Partners" class="subforum-link">IES/Find Partners</a> by
+                        <span class="user" data-username="CiaoChatter">
+                            CiaoChatter <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">1 day ago</span>
+                        <span class="post-flair">Looking For</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-8">English speaker looking for Italian practice partner</a></h3>
+                    <p class="post-body">Native English speaker (intermediate Italian) looking for someone to practice Italian with, happy to help with English in return! Coffee/aperitivo maybe?</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (6)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn saved"><i class="fas fa-bookmark"></i> Saved</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="hidden-gems" data-post-id="post-9">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">115</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Quiet%20Spots" class="subforum-link">IES/Quiet Spots</a> by
+                        <span class="user" data-username="SecretSeeker">
+                            SecretSeeker <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">4 hours ago</span>
+                        <span class="post-flair">Discovery</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-9">Found a tiny library cafe near IES!</a></h3>
+                    <p class="post-body">Stumbled upon this adorable little cafe tucked away on a side street near the center. It's full of books, quiet, great coffee. Perfect study spot! Not gonna gatekeep, it's called 'Libri & Caffè'.</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (18)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="campus-life" data-post-id="post-10">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">22</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=IES%20Center" class="subforum-link">IES/IES Center</a> by
+                        <span class="user" data-username="ScheduleSurfer">
+                            ScheduleSurfer <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">yesterday</span>
+                        <span class="post-flair">Help</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-10">Printing at the IES Center?</a></h3>
+                    <p class="post-body">Does anyone know if there's a printer available for student use at the IES center? Need to print out a boarding pass for a weekend trip. Thanks!</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (4)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="food-drink" data-post-id="post-11">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">65</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Pizza" class="subforum-link">IES/Pizza</a> by
+                        <span class="user" data-username="PizzaPundit">
+                            PizzaPundit <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">9 hours ago</span>
+                        <span class="post-flair">Recommendation</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-11">Best Pizza al Taglio near Duomo?</a></h3>
+                    <p class="post-body">Need a quick, cheap, and delicious pizza slice near the Duomo for lunch between classes. Spontini is obvious, any other recommendations?</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (11)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="trips" data-post-id="post-12">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">33</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Train%20Travel" class="subforum-link">IES/Train Travel</a> by
+                        <span class="user" data-username="TrainTraveller">
+                            TrainTraveller <span class="badge alumni">Alumni</span>
+                        </span>
+                        <span class="timestamp">2 days ago</span>
+                        <span class="post-flair">Tip</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-12">Booking Trenitalia vs Italo</a></h3>
+                    <p class="post-body">For anyone planning train trips: always compare prices between Trenitalia (national railway) and Italo (private high-speed). Sometimes one is significantly cheaper or has better times for the same route. Use apps like Omio or Trainline to compare easily.</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (7)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn saved"><i class="fas fa-bookmark"></i> Saved</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="housing" data-post-id="post-13">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">19</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Contracts" class="subforum-link">IES/Contracts</a> by
+                        <span class="user" data-username="ContractConfused">
+                            ContractConfused <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">1 day ago</span>
+                        <span class="post-flair">Question</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-13">Understanding Italian rental contracts?</a></h3>
+                    <p class="post-body">My landlord sent over the rental contract (4+4 anni?) and it's all in Italian legal jargon. Is this standard? Anything specific I should look out for before signing? Feeling a bit overwhelmed.</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (8)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="classes" data-post-id="post-14">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote active"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">48</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Course%20Reviews" class="subforum-link">IES/Course Reviews</a> by
+                        <span class="user" data-username="FashionForward">
+                            FashionForward <span class="badge student">Current Student</span>
+                        </span>
+                        <span class="timestamp">6 hours ago</span>
+                        <span class="post-flair">Discussion</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-14">Is the 'Italian Fashion & Luxury Goods' class worth it?</a></h3>
+                    <p class="post-body">Debating adding the Italian Fashion class. Sounds cool, but is it mostly theory or are there practical elements/visits? How's the professor? Any insight appreciated!</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (10)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post" data-topic="internships" data-post-id="post-15">
+                <div class="post-sidebar">
+                    <button class="vote-btn upvote"><i class="fas fa-arrow-up"></i></button>
+                    <span class="vote-count">12</span>
+                    <button class="vote-btn downvote"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        Posted in <a href="subforum.html?sub=Finding%20Placements" class="subforum-link">IES/Finding Placements</a> by
+                        <span class="user" data-username="CareerClimber">
+                            CareerClimber <span class="badge alumni">Alumni</span>
+                        </span>
+                        <span class="timestamp">4 days ago</span>
+                        <span class="post-flair">Advice</span>
+                    </div>
+                    <h3 class="post-title"><a href="post.html?id=post-15">Tips for finding an internship in Milan post-IES?</a></h3>
+                    <p class="post-body">For those who stayed in Milan after their program, how did you go about finding internships or jobs? Did the IES internship program help? Any advice on networking or specific companies to look at?</p>
+                    <div class="post-actions">
+                        <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (5)</button>
+                        <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                        <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar right-sidebar">
+            <!-- Default Sections -->
+            <div class="default-sidebar-section" id="live-events-section">
+                <h2>Live Events</h2>
+                <div class="event-board">
+                    <div class="event">
+                        <h4>IES Welcome Aperitivo</h4>
+                        <p><i class="far fa-calendar-alt"></i> Sept 15th, 7:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Terrazza Aperol</p>
+                        <a href="#" class="event-link">Details</a>
+                    </div>
+                    <div class="event">
+                        <h4>Weekend Trip: Lake Como</h4>
+                        <p><i class="far fa-calendar-alt"></i> Sept 20th - 22nd</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Meet at Milano Centrale</p>
+                        <a href="#" class="event-link">Sign Up</a>
+                    </div>
+                    <div class="event">
+                        <h4>Movie Night: Cinema Paradiso</h4>
+                        <p><i class="far fa-calendar-alt"></i> Sept 25th, 8:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> IES Center Lounge</p>
+                        <a href="#" class="event-link">Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="default-sidebar-section" id="rules-section">
+                <div class="info-box">
+                    <h3>IESconnect Rules</h3>
+                    <ol>
+                        <li>Be respectful.</li>
+                        <li>Stay on topic.</li>
+                        <li>No spam or self-promotion.</li>
+                        <li>Contribute positively!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Topic Specific Sections (Initially Hidden) -->
+            <div class="topic-specific-section hidden-section" id="sub-forums-section">
+                <h3>Sub-forums</h3>
+                <ul class="sub-forum-list">
+                    <!-- Sub-forum links will be dynamically added here -->
+                    <li><a href="#">Loading...</a></li>
+                </ul>
+            </div>
+
+            <div class="topic-specific-section hidden-section" id="similar-topics-section">
+                <h3>Similar Topics</h3>
+                <ul class="similar-topic-list">
+                    <!-- Similar topic links will be dynamically added here -->
+                    <li><a href="#">Loading...</a></li>
+                </ul>
+            </div>
+
+            <!-- Always Visible Section -->
+            <div class="resources-box">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#help"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                    <li><a href="#moderation"><i class="fas fa-gavel"></i> Moderation Guidelines</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About IESconnect</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IESconnect. For Students, By Students.</p>
+    </footer>
+
+    <div class="modal-overlay" id="comment-modal-overlay">
+        <div class="comment-modal" id="comment-modal">
+            <div class="modal-header">
+                <h3 id="modal-post-title">Post Title Here</h3>
+                <button class="close-modal" id="close-comment-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="original-post-content">
+                    <p id="modal-post-body">Original post body...</p>
+                    <div class="post-info" id="modal-post-info">
+                        Posted by <span class="user">User</span> <span class="timestamp">Time</span>
+                    </div>
+                </div>
+                <hr>
+                <h4>Comments</h4>
+                <div class="comments-list" id="modal-comments-list">
+                    <!-- Comments will be loaded here -->
+                    <div class="comment-placeholder">Loading comments...</div>
+                </div>
+                <div class="add-comment">
+                    <textarea placeholder="Add your comment..."></textarea>
+                    <button class="btn btn-submit-comment">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="create-post-modal-overlay">
+        <div class="create-post-modal" id="create-post-modal">
+            <div class="modal-header">
+                <h3>Create a New Post</h3>
+                <button class="close-modal" id="close-create-post-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="create-post-form">
+                    <div class="form-group">
+                        <label for="post-title-input">Title</label>
+                        <input type="text" id="post-title-input" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-body-textarea">Post Content</label>
+                        <textarea id="post-body-textarea" name="body" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-subforum-select">Sub-forum (Choose One)</label>
+                        <select id="post-subforum-select" name="subforum" required>
+                            <option value="" disabled selected>Select a Sub-forum</option>
+                            <optgroup label="Housing">
+                                <option value="Apartment Hunting">IES/Apartment Hunting</option>
+                                <option value="Residences">IES/Residences</option>
+                                <option value="Neighborhoods">IES/Neighborhoods</option>
+                                <option value="Contracts">IES/Contracts</option>
+                            </optgroup>
+                            <optgroup label="Classes">
+                                <option value="Course Reviews">IES/Course Reviews</option>
+                                <option value="Study Tips">IES/Study Tips</option>
+                                <option value="Registration">IES/Registration</option>
+                            </optgroup>
+                            <optgroup label="Food & Drink">
+                                <option value="Restaurants">IES/Restaurants</option>
+                                <option value="Aperitivo">IES/Aperitivo</option>
+                                <option value="Cafes">IES/Cafes</option>
+                                <option value="Pizza">IES/Pizza</option>
+                                <option value="Gelato">IES/Gelato</option>
+                            </optgroup>
+                            <optgroup label="Trips">
+                                <option value="Day Trips">IES/Day Trips</option>
+                                <option value="Weekend Getaways">IES/Weekend Getaways</option>
+                                <option value="Train Travel">IES/Train Travel</option>
+                            </optgroup>
+                            <optgroup label="Places to See">
+                                <option value="Museums">IES/Museums</option>
+                                <option value="Historical Sites">IES/Historical Sites</option>
+                            </optgroup>
+                            <optgroup label="Other">
+                                <option value="Hidden Gems">IES/Hidden Gems</option>
+                                <option value="Nightlife">IES/Nightlife</option>
+                                <option value="Language Exchange">IES/Language Exchange</option>
+                                <option value="Internships">IES/Internships</option>
+                                <option value="Campus Life">IES/Campus Life</option>
+                                <option value="Transportation">IES/Transportation</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-topic-select">Primary Topic (Choose One)</label>
+                        <select id="post-topic-select" name="topic" required>
+                            <option value="" disabled selected>Select a Topic</option>
+                            <option value="housing">Housing</option>
+                            <option value="classes">Classes</option>
+                            <option value="food-drink">Food & Drink</option>
+                            <option value="trips">Trips</option>
+                            <option value="places-to-see">Places to See</option>
+                            <option value="hidden-gems">Hidden Gems</option>
+                            <option value="nightlife">Nightlife</option>
+                            <option value="language-exchange">Language Exchange</option>
+                            <option value="internships">Internships</option>
+                            <option value="campus-life">Campus Life</option>
+                            <option value="transportation">Transportation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-flair-select">Flair/Tag (Optional)</label>
+                        <select id="post-flair-select" name="flair">
+                            <option value="">None</option>
+                            <option value="Question">Question</option>
+                            <option value="Recommendation">Recommendation</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Discussion">Discussion</option>
+                            <option value="Tip">Tip</option>
+                            <option value="Help">Help</option>
+                            <option value="Discovery">Discovery</option>
+                            <option value="Looking For">Looking For</option>
+                            <option value="Advice">Advice</option>
+                            <option value="Event">Event</option>
+                            <option value="News">News</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-submit-post">Submit Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
