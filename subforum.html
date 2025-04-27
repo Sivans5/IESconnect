@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IESconnect - Sub-forum</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="/IESconnect-2.png" alt="IESconnect Logo" class="logo"></a>
+            <a href="index.html" style="text-decoration: none;"><span class="header-title">IESconnect</span></a>
+        </div>
+        <nav>
+            <form action="search.html" method="GET" class="search-form">
+                 <input type="hidden" name="sub" id="search-subforum-scope" value=""> 
+                 <input type="search" name="query" placeholder="Search within this sub-forum..." class="search-bar" required>
+                 <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+             </form>
+        </nav>
+        <div class="user-profile" id="user-profile-toggle">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <span class="username">FlyingSquirrelMan</span>
+            <i class="fas fa-caret-down dropdown-arrow"></i>
+            <div class="dropdown-menu" id="user-dropdown">
+                <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+                <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#saved"><i class="fas fa-bookmark"></i> Saved Posts</a>
+                <hr>
+                <a href="#logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="subforum-banner">
+        <div class="subforum-header">
+            <div class="subforum-title-section">
+                 <div class="subforum-icon" id="subforum-icon-container">
+                    <i class="fas fa-home"></i> 
+                 </div>
+                 <div>
+                    <h1 class="subforum-title" id="subforum-title-heading">IES/Loading...</h1>
+                    <div class="subforum-stats" id="subforum-stats-info">
+                        <span><i class="fas fa-users"></i> 1,234 Members</span>
+                        <span><i class="fas fa-circle" style="color: lightgreen; font-size: 0.8em;"></i> 56 Online</span>
+                    </div>
+                </div>
+            </div>
+            <div class="subforum-actions">
+                <button class="btn btn-join"><i class="fas fa-plus"></i> Join</button>
+                <button class="btn btn-create-post-subforum" id="create-post-btn-subforum">Create Post</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="subforum-container">
+        <section class="subforum-feed">
+            <div class="pinned-posts-section">
+                <h3><i class="fas fa-thumbtack"></i> Pinned Posts</h3>
+                <div id="pinned-posts-feed">
+                    <article>
+                        <h3 class="post-title"><a href="post.html?id=pinned-1">Welcome to the IES Milan Forum!</a></h3>
+                        <p class="post-body">This is a pinned post welcoming you to our community. Feel free to introduce yourself and ask any questions you may have about living in Milan or studying with IES.</p>
+                        <div class="post-actions">
+                            <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (2)</button>
+                            <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                            <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="community-posts-section">
+                <h3>Community Posts</h3>
+                 <div id="community-posts-feed">
+                    <article>
+                        <h3 class="post-title"><a href="post.html?id=community-1">Looking for a room in a shared apartment</a></h3>
+                        <p class="post-body">Hi everyone, I'm looking for a room in a shared apartment in the city center. If anyone has any leads or knows of any available rooms, please let me know. Thanks!</p>
+                        <div class="post-actions">
+                            <button class="action-btn comment-btn"><i class="fas fa-comment-alt"></i> Comments (0)</button>
+                            <button class="action-btn"><i class="fas fa-share"></i> Share</button>
+                            <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <aside class="subforum-sidebar">
+            <div class="subforum-about">
+                <h3 id="about-subforum-title">About IES/Loading...</h3>
+                <p id="subforum-description">Welcome! This space is dedicated to discussing all things related to [Topic]. Share tips, ask questions, and connect with fellow students.</p>
+            </div>
+
+            <div class="subforum-rules">
+                <h3>Community Rules</h3>
+                <ol id="subforum-rules-list">
+                    <li>Be respectful and constructive.</li>
+                    <li>Stay relevant to the sub-forum topic.</li>
+                    <li>No spam or excessive self-promotion.</li>
+                    <li>Follow general IESconnect guidelines.</li>
+                </ol>
+            </div>
+
+            <div class="subforum-links">
+                <h3>Related Links</h3>
+                <ul id="subforum-related-links">
+                    <li><a href="#"><i class="fas fa-link"></i> Official IES Abroad Page</a></li>
+                    <li><a href="#"><i class="fab fa-facebook-square"></i> Milan Student Facebook Group</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> ATM Milano (Transport)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IESconnect. For Students, By Students.</p>
+    </footer>
+
+    <div class="modal-overlay" id="create-post-modal-overlay">
+        <div class="create-post-modal" id="create-post-modal">
+            <div class="modal-header">
+                <h3>Create a New Post in <span id="modal-subforum-name">Sub-forum</span></h3>
+                <button class="close-modal" id="close-create-post-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="create-post-form">
+                    <div class="form-group">
+                        <label for="post-title-input">Title</label>
+                        <input type="text" id="post-title-input" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-body-textarea">Post Content</label>
+                        <textarea id="post-body-textarea" name="body" rows="6" required></textarea>
+                    </div>
+                    <input type="hidden" id="post-subforum-hidden" name="subforum">
+                    <div class="form-group">
+                        <label for="post-topic-select">Primary Topic (Choose One)</label>
+                        <select id="post-topic-select" name="topic" required>
+                            <option value="" disabled selected>Select a Topic</option>
+                            <option value="housing">Housing</option>
+                            <option value="classes">Classes</option>
+                            <option value="food-drink">Food & Drink</option>
+                            <option value="trips">Trips</option>
+                            <option value="places-to-see">Places to See</option>
+                            <option value="hidden-gems">Hidden Gems</option>
+                            <option value="nightlife">Nightlife</option>
+                            <option value="language-exchange">Language Exchange</option>
+                            <option value="internships">Internships</option>
+                            <option value="campus-life">Campus Life</option>
+                            <option value="transportation">Transportation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-flair-select">Flair/Tag (Optional)</label>
+                        <select id="post-flair-select" name="flair">
+                            <option value="">None</option>
+                            <option value="Question">Question</option>
+                            <option value="Recommendation">Recommendation</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Discussion">Discussion</option>
+                            <option value="Tip">Tip</option>
+                            <option value="Help">Help</option>
+                            <option value="Discovery">Discovery</option>
+                            <option value="Looking For">Looking For</option>
+                            <option value="Advice">Advice</option>
+                            <option value="Event">Event</option>
+                            <option value="News">News</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-submit-post">Submit Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="subforum.js"></script>
+</body>
+</html>

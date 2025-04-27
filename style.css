@@ -1,0 +1,1324 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --deep-navy-blue: #0A2239;
+    --terracotta: #E07A5F; /* Muted Coral/Salmon from logo seems closer */
+    --sand: #F4F1DE;
+    --white: #FFFFFF;
+    --light-blue-logo: #81B2CC; /* From logo */
+    --grey: #888;
+    --light-grey: #ccc;
+    --border-radius: 4px;
+    --border-radius-round: 20px; /* For search bar */
+    --post-background: var(--white); /* White post background for contrast */
+    --text-color: #333;
+    --link-color: var(--terracotta);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--sand);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: var(--deep-navy-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Increased size */
+    margin-right: 15px; /* More space */
+}
+
+.header-title {
+    font-size: 1.5em; /* Make title visible */
+    font-weight: 700;
+    color: var(--white);
+}
+
+header nav {
+    display: flex;
+    flex-grow: 1; /* Allow nav to take space */
+    justify-content: center; /* Center search bar */
+    align-items: center;
+    margin: 0 20px; /* Add some margin around nav */
+}
+
+.search-form { /* Style the form containing the search bar */
+    display: flex;
+    align-items: center;
+    background-color: var(--white); /* Match search bar background */
+    border-radius: var(--border-radius-round); /* Round container */
+    padding-left: 5px; /* Space before input */
+    border: 1px solid var(--light-grey); /* Add border to form */
+    width: 50%; /* Take up a portion */
+    max-width: 500px; /* But not too much */
+    min-width: 300px; /* Ensure decent width */
+}
+.search-form:focus-within { /* Highlight when focused */
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 2px rgba(224, 122, 95, 0.2);
+}
+
+.search-bar {
+    padding: 8px 10px; /* Adjust padding */
+    border: none; /* Remove individual border */
+    border-radius: 0; /* Remove individual rounding */
+    margin-right: 0; /* Remove margin */
+    flex-grow: 1; /* Allow input to fill space */
+    background-color: transparent; /* Inherit form background */
+    outline: none; /* Remove outline */
+}
+
+.search-button {
+    background: none;
+    border: none;
+    color: var(--grey);
+    padding: 8px 12px; /* Padding around icon */
+    cursor: pointer;
+    border-radius: 0 var(--border-radius-round) var(--border-radius-round) 0; /* Round right corners */
+    margin-left: auto; /* Push button to the right */
+}
+.search-button:hover {
+    color: var(--terracotta);
+}
+.search-button i {
+    font-size: 1em;
+}
+
+.user-profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid transparent; /* Placeholder for hover/active state */
+    border-radius: var(--border-radius);
+}
+.user-profile:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--light-blue-logo);
+}
+
+.user-avatar {
+    margin-right: 8px;
+}
+
+.user-avatar i {
+    font-size: 1.8em; /* Make icon larger */
+    color: var(--light-blue-logo);
+}
+
+.username {
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.dropdown-arrow {
+    font-size: 0.8em;
+    margin-left: auto;
+    transition: transform 0.2s ease-in-out;
+}
+.user-profile.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the profile element */
+    right: 0;
+    background-color: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    z-index: 1100; /* Above other elements */
+    margin-top: 5px; /* Small gap */
+    padding: 5px 0; /* Padding top/bottom */
+}
+
+.dropdown-menu.show {
+    display: block; /* Show when active */
+}
+
+.dropdown-menu a {
+    display: flex; /* Use flex for icon alignment */
+    align-items: center;
+    padding: 10px 15px;
+    color: var(--text-color);
+    font-size: 0.9em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.dropdown-menu a i {
+    margin-right: 10px;
+    color: var(--grey);
+    width: 16px;
+    text-align: center;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--sand);
+    color: var(--deep-navy-blue);
+}
+.dropdown-menu a:hover i {
+    color: var(--terracotta);
+}
+
+.dropdown-menu hr {
+    border: none;
+    border-top: 1px solid var(--light-grey);
+    margin: 5px 0;
+}
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/* User Profile Dropdown */
+
+/* Main Container */
+.container {
+    display: flex;
+    max-width: 1300px; /* Slightly wider */
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px; /* Space between columns */
+}
+
+/* Sidebars */
+.sidebar {
+    flex: 0 0 250px; /* Fixed width for sidebars */
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--light-grey);
+    height: fit-content; /* So it doesn't stretch full height */
+}
+
+.sidebar h2 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--deep-navy-blue);
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    font-size: 0.95em; /* Adjust font size if needed */
+    padding: 5px; /* Add padding for better click area */
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease; /* Smooth hover */
+}
+.sidebar ul li a:hover {
+    color: var(--terracotta);
+    background-color: var(--sand); /* Highlight on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+.sidebar ul li a.active-topic {
+    background-color: var(--terracotta);
+    color: var(--white);
+    font-weight: 500;
+}
+.sidebar ul li a.active-topic i {
+    color: var(--white); /* Match icon color to text */
+}
+
+.sidebar ul li i {
+    margin-right: 8px;
+    color: var(--grey);
+    width: 18px; /* Align icons - adjust width if needed */
+    text-align: center;
+}
+.sidebar ul li a:hover i {
+    color: var(--terracotta);
+}
+
+/* Right Sidebar Specifics */
+.right-sidebar h2, .right-sidebar h3 {
+    margin-top: 20px; /* Space between sections */
+    font-size: 1em; /* Standardize heading size */
+    margin-bottom: 10px;
+    color: var(--deep-navy-blue);
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 5px;
+}
+.right-sidebar > div:first-child h2, /* Remove top margin for the very first section */
+.right-sidebar > div:first-child h3 {
+    margin-top: 0;
+}
+
+.right-sidebar .event-board,
+.right-sidebar .info-box,
+.right-sidebar .resources-box,
+.right-sidebar .sub-forums-section, /* Style new sections */
+.right-sidebar .similar-topics-section {
+    margin-bottom: 20px;
+    background-color: var(--sand);
+    padding: 15px; /* Slightly more padding */
+    border-radius: var(--border-radius);
+}
+
+.right-sidebar .info-box {
+    background-color: var(--light-blue-logo);
+    color: var(--deep-navy-blue);
+}
+
+.right-sidebar .info-box h3, /* Keep titles consistent */
+.right-sidebar .resources-box h3,
+.right-sidebar .sub-forums-section h3, /* Style new headings */
+.right-sidebar .similar-topics-section h3 {
+    border-bottom: 1px solid rgba(10, 34, 57, 0.2); /* Darker border for contrast */
+     /* Reset top margin as it's handled by the parent div */
+    margin-top: 0;
+}
+
+/* Styling for new lists */
+.sub-forum-list,
+.similar-topic-list {
+    list-style: none;
+    padding-left: 0;
+}
+.sub-forum-list li,
+.similar-topic-list li {
+    margin-bottom: 8px;
+}
+.sub-forum-list li a,
+.similar-topic-list li a {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    padding: 4px 8px; /* Add padding */
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.sub-forum-list li a:hover,
+.similar-topic-list li a:hover {
+    color: var(--terracotta);
+    background-color: #e9e5d1; /* Slightly darker sand */
+    text-decoration: none;
+}
+
+.event {
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.event:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.event h4 {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    color: var(--deep-navy-blue);
+}
+
+.event p {
+    font-size: 0.85em;
+    color: var(--grey);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+}
+.event p i {
+    margin-right: 5px;
+    width: 12px;
+}
+
+.event-link {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.info-box ol {
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+.info-box li {
+    margin-bottom: 5px;
+}
+
+/* Resources Box */
+.resources-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+.resources-box ul li {
+    margin-bottom: 8px;
+}
+.resources-box ul li a {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+.resources-box ul li a:hover {
+    color: var(--terracotta);
+}
+.resources-box ul li i {
+    margin-right: 8px;
+    color: var(--grey);
+    width: 16px;
+    text-align: center;
+}
+.resources-box ul li a:hover i {
+    color: var(--terracotta);
+}
+
+/* Main Feed */
+.main-feed {
+    flex: 1; /* Takes remaining space */
+    min-width: 0; /* Prevent flex item overflow */
+}
+
+/* Post Styling */
+.post {
+    background-color: var(--post-background);
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    display: flex;
+    overflow: hidden; /* Contain floats/flex items */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* For filtering animation */
+}
+
+.post.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    height: 0;
+    margin-bottom: 0;
+    border: none;
+    padding: 0;
+    overflow: hidden; /* Ensure content is clipped */
+}
+
+.post-sidebar {
+    flex: 0 0 40px; /* Fixed width for votes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    background-color: var(--sand); /* Slightly different background */
+}
+
+.vote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--grey);
+    font-size: 1.2em;
+    padding: 5px;
+}
+.vote-btn:hover {
+    color: var(--terracotta);
+}
+.vote-btn.upvote.active {
+    color: var(--terracotta); /* Active upvote color */
+}
+.vote-btn.downvote.active {
+    color: var(--light-blue-logo); /* Active downvote color */
+}
+
+.vote-count {
+    font-size: 0.9em;
+    font-weight: 500;
+    margin: 2px 0;
+    color: var(--deep-navy-blue);
+}
+
+.post-content {
+    padding: 10px 15px;
+    flex: 1;
+    min-width: 0; /* Prevent flex item overflow */
+}
+
+.post-info {
+    font-size: 0.8em;
+    color: var(--grey);
+    margin-bottom: 5px;
+}
+
+.post-info .subforum-link {
+    font-weight: 500;
+    color: var(--deep-navy-blue);
+}
+.post-info .subforum-link:hover {
+    text-decoration: underline;
+}
+
+.post-info .user {
+    color: var(--text-color); /* Or maybe a specific user color */
+    font-weight: 500;
+    margin: 0 5px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    border-radius: var(--border-radius);
+    margin-left: 5px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.badge.student {
+    background-color: var(--terracotta);
+    color: var(--white);
+}
+
+.badge.alumni {
+    background-color: var(--light-blue-logo);
+    color: var(--deep-navy-blue);
+}
+
+.timestamp {
+    margin-left: 5px;
+}
+
+.post-flair {
+    display: inline-block;
+    background-color: var(--sand);
+    color: var(--grey);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75em;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.post-title {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+.post-title a {
+    color: var(--deep-navy-blue);
+}
+.post-title a:hover {
+    color: var(--terracotta);
+    text-decoration: none;
+}
+
+.post-body {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    max-height: 150px; /* Limit initial height */
+    overflow: hidden; /* Hide overflow */
+    position: relative;
+}
+.post-body.full-view { /* Class added on post.html */
+    max-height: none;
+    overflow: visible;
+}
+.post-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px; /* Height of the fade */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--post-background));
+    pointer-events: none; /* Allows clicking through */
+    display: none; /* Initially hidden, JS can show if overflow */
+}
+.post-body.overflowing:not(.full-view)::after { /* Only show fade if overflowing AND not full view */
+    display: block;
+}
+
+.post-actions {
+    display: flex;
+    gap: 15px; /* Space between action buttons */
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--grey);
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: var(--border-radius);
+}
+.action-btn:hover {
+    background-color: var(--sand);
+    color: var(--deep-navy-blue);
+}
+
+.action-btn i {
+    margin-right: 5px;
+}
+
+.action-btn.save-btn i.far { /* Target the regular icon specifically */
+    font-weight: normal;
+}
+.action-btn.save-btn i.fas { /* Target the solid icon specifically */
+    font-weight: bold; /* Ensure solid bookmark is bold */
+    color: var(--terracotta);
+}
+.action-btn.save-btn.saved i.fas { /* Already saved state */
+    color: var(--terracotta);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--deep-navy-blue);
+    color: var(--sand);
+    font-size: 0.9em;
+}
+
+/* Comment Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.comment-modal {
+    background-color: var(--white);
+    padding: 20px 30px;
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+.modal-overlay.active .comment-modal {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    color: var(--deep-navy-blue);
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--grey);
+    padding: 0 5px;
+}
+.close-modal:hover {
+    color: var(--terracotta);
+}
+
+.modal-body {
+    padding: 0 5px; /* Add slight padding */
+}
+
+.original-post-content {
+    background-color: var(--sand);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+#modal-post-title {
+    font-size: 1.1em; /* Slightly smaller in modal if needed */
+    margin-bottom: 5px;
+}
+#modal-post-body {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+#modal-post-info {
+    font-size: 0.8em;
+    color: var(--grey);
+}
+#modal-post-info .user {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.modal-body h4 {
+    font-size: 1.1em;
+    color: var(--deep-navy-blue);
+    margin-bottom: 10px;
+}
+
+.comments-list {
+    max-height: 40vh; /* Limit height of comment list */
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.comment {
+    border-bottom: 1px solid var(--sand);
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+.comment:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.comment-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.85em;
+}
+.comment-avatar i {
+    font-size: 1.5em;
+    color: var(--light-blue-logo);
+    margin-right: 8px;
+}
+.comment-author {
+    font-weight: 500;
+    color: var(--deep-navy-blue);
+    margin-right: 8px;
+}
+.comment-timestamp {
+    color: var(--grey);
+    font-size: 0.9em;
+}
+
+.comment-info .comment-op-badge {
+    display: inline-block;
+    background-color: var(--terracotta);
+    color: var(--white);
+    font-size: 0.7em;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+.comment-body {
+    font-size: 0.9em;
+    padding-left: 30px; /* Indent comment body slightly */
+    line-height: 1.5;
+}
+
+.comment-placeholder {
+    color: var(--grey);
+    text-align: center;
+    padding: 20px;
+}
+
+.add-comment {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--light-grey);
+}
+.add-comment textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+.btn-submit-comment {
+    background-color: var(--terracotta);
+    color: var(--white);
+    padding: 8px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+}
+.btn-submit-comment:hover {
+    opacity: 0.9;
+}
+
+/* Create Post Modal */
+.create-post-modal {
+    background-color: transparent; /* Make modal background transparent */
+    padding: 0; /* Remove padding */
+    max-width: 650px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto; /* Allow scroll if form is long */
+    box-shadow: none; /* Remove default shadow */
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    display: flex; /* Center content */
+    flex-direction: column; /* Stack header/body */
+    align-items: center; /* Center horizontally */
+}
+
+.modal-overlay.active .create-post-modal {
+    transform: scale(1);
+}
+
+/* Style the actual form container inside the modal */
+.create-post-modal .modal-header,
+.create-post-modal .modal-body {
+    background-color: var(--white); /* White background for form area */
+    width: 100%; /* Take full width of modal container */
+}
+
+.create-post-modal .modal-header {
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--light-grey);
+    border-radius: var(--border-radius) var(--border-radius) 0 0; /* Round top corners */
+}
+
+.create-post-modal .modal-body {
+    padding: 20px 25px 30px 25px; /* More padding */
+    border-radius: 0 0 var(--border-radius) var(--border-radius); /* Round bottom corners */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15); /* Add shadow to the form container */
+}
+
+
+.create-post-modal .modal-header h3 {
+    color: var(--deep-navy-blue);
+    font-size: 1.3em;
+    margin: 0;
+}
+
+#create-post-form .form-group {
+    margin-bottom: 15px;
+}
+
+#create-post-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+#create-post-form input[type="text"],
+#create-post-form textarea,
+#create-post-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 0.95em;
+    background-color: #fdfdfd; /* Slightly off-white */
+}
+#create-post-form input[type="text"]:focus,
+#create-post-form textarea:focus,
+#create-post-form select:focus {
+    outline: none;
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 2px rgba(224, 122, 95, 0.2); /* Subtle focus ring */
+}
+
+#create-post-form textarea {
+    min-height: 100px; /* Ensure decent height */
+    resize: vertical; /* Allow vertical resize only */
+}
+
+#create-post-form select {
+     appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888'%3E%3Cpath fill-rule='evenodd' d='M4.22 6.22a.75.75 0 011.06 0L8 8.94l2.72-2.72a.75.75 0 111.06 1.06l-3.25 3.25a.75.75 0 01-1.06 0L4.22 7.28a.75.75 0 010-1.06z'/%3E%3C/svg%3E"); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    padding-right: 30px; /* Space for arrow */
+}
+#create-post-form select:required:invalid { /* Style invalid selects */
+    color: var(--grey);
+}
+#create-post-form select option[disabled] {
+    color: #aaa;
+}
+#create-post-form select option {
+    color: var(--text-color);
+}
+
+
+.btn-submit-post {
+    background-color: var(--terracotta);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1em;
+    margin-top: 10px;
+    width: 100%; /* Full width button */
+    transition: background-color 0.2s ease;
+}
+.btn-submit-post:hover {
+    background-color: #c76a51; /* Darker terracotta */
+    opacity: 1; /* Remove default opacity change */
+}
+
+/* --- Single Post Page Styles --- */
+.post-page-container {
+    display: flex;
+    max-width: 1100px; /* Adjust width as needed */
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+.post-main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.full-post-display .post {
+    border: none; /* Remove border if it's the main element */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Add subtle shadow */
+    margin-bottom: 25px; /* Space before comments */
+    background-color: var(--white); /* Ensure white background */
+}
+
+/* Ensure full post body is shown */
+.full-post-display .post-body {
+    max-height: none;
+    overflow: visible;
+}
+.full-post-display .post-body::after {
+    display: none; /* Remove fade effect */
+}
+
+.post-comments-section {
+    background-color: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius);
+    padding: 20px 25px;
+    margin-bottom: 20px;
+}
+
+.post-comments-section h3 {
+    font-size: 1.3em;
+    color: var(--deep-navy-blue);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 10px;
+}
+
+/* Use existing comment styles, but adjust container */
+.post-comments-section .comments-list {
+    max-height: none; /* No height limit unless needed */
+    overflow-y: visible;
+    padding-right: 0;
+    margin-bottom: 20px; /* Space above add comment */
+}
+
+.post-comments-section .add-comment {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-grey);
+}
+
+.post-sidebar-right {
+    flex: 0 0 300px;
+    /* Reuse styles from .right-sidebar or .subforum-sidebar if applicable */
+     height: fit-content;
+}
+.post-sidebar-right > div {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--light-grey);
+    margin-bottom: 20px;
+}
+.post-sidebar-right h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--deep-navy-blue);
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Hide sections utility */
+.hidden-section {
+    display: none !important; /* Use important to ensure override */
+}
+
+/* Responsive adjustments (example) */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        max-width: 95%; /* Use more width */
+    }
+    .sidebar {
+        flex: 1 1 auto; /* Allow sidebars to take full width */
+        width: 100%;
+        margin-bottom: 15px;
+        order: 1; /* Place left sidebar below header */
+    }
+    .right-sidebar {
+        order: 3; /* Place right sidebar after feed */
+    }
+    .main-feed {
+        order: 2; /* Place main feed between sidebars */
+    }
+    header nav {
+        flex-grow: 0; /* Don't grow */
+        margin: 0 10px; /* Reduce margin */
+    }
+    .search-form {
+        width: 100%;
+        min-width: auto; /* Allow shrinking */
+    }
+    .user-profile {
+        margin-left: 10px; /* Space before user profile */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; /* Allow items to wrap */
+    }
+    .logo-container {
+        order: 1;
+        flex-basis: 70%; /* Take most width on line 1 */
+    }
+    .user-profile {
+        order: 2;
+        flex-basis: 25%; /* Take remaining width */
+        justify-content: flex-end;
+    }
+    header nav {
+        order: 3;
+        flex-basis: 100%; /* Take full width on line 2 */
+        margin: 10px 0 0 0; /* Top margin, no side margin */
+        justify-content: center; /* Center search bar */
+    }
+    .search-form {
+        margin: 0; /* Remove margin */
+    }
+    .dropdown-menu {
+        min-width: 150px; /* Adjust dropdown size */
+    }
+}
+
+@media (max-width: 600px) {
+     .post-title {
+        font-size: 1.1em;
+    }
+    .logo {
+        height: 40px;
+    }
+    .header-title {
+        font-size: 1.3em;
+    }
+    .user-avatar i {
+        font-size: 1.6em;
+    }
+    .username {
+        display: none; /* Hide username on very small screens */
+    }
+    .user-profile {
+        padding: 5px;
+    }
+}
+
+/* --- Sub-forum Page Specific Styles --- */
+
+.subforum-banner {
+    background: linear-gradient(to right, var(--deep-navy-blue), var(--light-blue-logo));
+    color: var(--white);
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius); /* Rounded bottom corners */
+}
+
+.subforum-header {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.subforum-title-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.subforum-icon {
+    font-size: 3em;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px; /* Fixed width */
+    height: 60px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subforum-icon i {
+    color: var(--white);
+}
+
+.subforum-title {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.subforum-stats {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+.subforum-stats span {
+    margin-right: 15px;
+}
+.subforum-stats i {
+    margin-right: 5px;
+}
+
+.subforum-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-join {
+    background-color: var(--terracotta);
+    color: var(--white);
+    border: none;
+}
+.btn-join:hover {
+    opacity: 0.9;
+}
+.btn-join i {
+    margin-right: 5px;
+}
+
+.btn-create-post-subforum {
+    background-color: var(--sand);
+    color: var(--deep-navy-blue);
+    border: 1px solid var(--deep-navy-blue);
+}
+.btn-create-post-subforum:hover {
+    background-color: #e9e5d1; /* Slightly darker sand */
+}
+
+/* Sub-forum Main Content Layout */
+.subforum-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto; /* Remove top margin */
+    padding: 0 15px;
+    gap: 20px;
+}
+
+.subforum-feed {
+    flex: 1; /* Takes remaining space */
+    min-width: 0; /* Prevent flex item overflow */
+}
+
+.subforum-sidebar {
+    flex: 0 0 300px; /* Slightly wider right sidebar for subforums */
+    background-color: transparent; /* Remove white background */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    height: fit-content; /* So it doesn't stretch full height */
+}
+.subforum-sidebar > div { /* Style the boxes within the sidebar */
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--light-grey);
+    margin-bottom: 20px;
+}
+
+.subforum-sidebar h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--deep-navy-blue);
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 5px;
+    margin-top: 0; /* Remove top margin */
+}
+
+.subforum-about p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.subforum-rules ol {
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+.subforum-rules li {
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.subforum-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+.subforum-links li {
+    margin-bottom: 8px;
+}
+.subforum-links li a {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+.subforum-links li a:hover {
+    color: var(--terracotta);
+}
+.subforum-links li i {
+    margin-right: 8px;
+    color: var(--grey);
+    width: 16px;
+    text-align: center;
+}
+.subforum-links li a:hover i {
+    color: var(--terracotta);
+}
+
+.pinned-posts-section,
+.community-posts-section {
+    margin-bottom: 20px;
+}
+
+.pinned-posts-section h3,
+.community-posts-section h3 {
+     font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--deep-navy-blue);
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 5px;
+}
+
+.pinned-posts-section .post {
+    border-left: 4px solid var(--terracotta); /* Highlight pinned posts */
+}
+.pinned-posts-section .post .post-info::before {
+    content: "\f08d"; /* Font Awesome pin icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--terracotta);
+    margin-right: 8px;
+}
+
+/* Responsive adjustments for sub-forum */
+@media (max-width: 992px) {
+    .subforum-container {
+        flex-direction: column;
+        max-width: 95%;
+    }
+    .subforum-sidebar {
+        flex: 1 1 auto;
+        width: 100%;
+        order: 1; /* Sidebar first */
+        margin-bottom: 15px; /* Add margin back */
+    }
+    .subforum-feed {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+     .subforum-banner {
+        padding: 20px 15px;
+    }
+    .subforum-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .subforum-title {
+        font-size: 1.8em;
+    }
+    .subforum-actions {
+        width: 100%;
+        margin-top: 10px;
+    }
+     .btn-join, .btn-create-post-subforum {
+        flex-grow: 1; /* Make buttons take equal width */
+        text-align: center;
+    }
+}
